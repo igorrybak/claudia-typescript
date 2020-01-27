@@ -1,0 +1,34 @@
+{
+    "name": "claudia-typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/main",
+    "files": [
+        "dist/**/*.*",
+        "package.json"
+    ],
+    "scripts": {
+        "create": "tsc && claudia create --api-module dist/main --region eu-central-1 --profile ACCOUNT_NUMBER",
+        "update": "tsc && claudia update --profile ACCOUNT_NUMBER",
+        "release": "claudia set-version --version production",
+        "local-api": "tsc && claudia-local-api --api-module dist/main.js | bunyan --output short",
+        "clean": "rm -r dist && tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ask-sdk": "^2.7.0",
+        "claudia": "^5.12.0",
+        "claudia-api-builder": "^4.1.2"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.14",
+        "bunyan": "^1.8.12",
+        "claudia-local-api": "^2.0.0",
+        "typescript": "^3.7.4"
+    }
+}

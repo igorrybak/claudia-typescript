@@ -1,0 +1,4 @@
+node_modules
+dist
+alexa-df*.json
+.vscode
